@@ -10,6 +10,7 @@ RUN npm run build
 FROM nginx:stable-alpine
 # Copy file đã build từ stage 1 sang thư mục của Nginx
 COPY --from=build-stage /app/dist /usr/share/nginx/html
+COPY default.conf /etc/nginx/conf.d/default.conf
 # Nginx mặc định chạy port 80
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
