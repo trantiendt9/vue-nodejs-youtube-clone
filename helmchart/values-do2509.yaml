@@ -87,7 +87,8 @@ ingress:
     - host: tvtien-cicd-youtube.vti2509.click
       paths:
         - path: /
-          pathType: ImplementationSpecific
+          # pathType: ImplementationSpecific
+          pathType: Prefix # Đổi từ ImplementationSpecific sang Prefix
   tls: []
     # - secretName: chart-example-tls
     #   hosts:
